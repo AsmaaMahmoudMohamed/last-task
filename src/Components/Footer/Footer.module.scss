@@ -1,0 +1,42 @@
+.mandiv{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    text-align: center;
+    background-color: white;
+    z-index: 55;
+    border: 2px solid wheat;
+
+   
+  
+}
+
+.caption{
+    display: flex;
+    justify-content: space-around;
+    
+    div{
+        img{
+            width: 10%;
+            display: inline-block;
+        }
+    }
+    border-bottom: 2px solid black;
+    
+    
+}
+.lastdiv{   
+    text-align: center;
+    color: #6B728C;
+    padding: 10px;
+    margin-top: 20px;
+}
+.div{
+    h4{
+        color:blue;
+        font-weight: 700px;
+        margin-right: 100px;
+        padding: 20px;
+    }
+}

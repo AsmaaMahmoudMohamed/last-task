@@ -1,0 +1,61 @@
+
+
+
+.maindiv{
+   
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 85%;
+
+}
+
+.divtitle{
+    width: 85%;
+    margin-left: 400px;
+ 
+    font-family: Pacifico, cursive;
+    h1{
+        font-size: 36px;
+        margin-left: 10px;
+        color: #DC5C45;
+    }
+}
+
+.maincaption {
+    display: flex;
+    justify-content:flex-start;
+    list-style: none;
+    gap: 20px;
+    margin-left: 40px;
+    padding: 20px;
+    font-size: 16px;
+
+}
+.maincaption1 {
+   
+    justify-content:left;
+    
+    @extend .maincaption
+}
+
+
+
+.caption{
+    text-decoration: none;
+   color: #4B558F;
+}
+
+.btn{
+    &:hover{
+        transform: all;
+        background-color: black;
+        color: aliceblue;
+
+    }
+    border: 2px solid transparent;
+    border-radius: 40px;
+    background-color: white;
+    
+}

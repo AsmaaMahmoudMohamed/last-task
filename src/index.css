@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.row{
+    @apply flex flex-wrap py-5 px-3;
+}
+
+.maindiv{
+    background-color: #F4F2EE;
+      box-sizing: border-box;
+      
+  }
