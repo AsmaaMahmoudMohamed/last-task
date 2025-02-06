@@ -8,14 +8,15 @@ import { Link } from 'react-router-dom';
 
 
 
+
 export default function All() {
   const [products, setproducts] = useState([])
 
 function getProducts(){
-  axios.get(`https://www.themealdb.com/api/json/v1/1/categories.php`)
+  axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=`)
   .then((res)=>{
-    // console.log(res.data.categories);
-    setproducts(res.data.categories);
+    console.log(res.data.meals);
+    setproducts(res.data.meals);
   })
   .catch((res)=>{
     
@@ -31,11 +32,13 @@ useEffect(()=>{
    
  <div className="row">
   {products.map((product)=>(
-    <div key={product.idCategory} className=  {`${style.maindiv} w-1/4 gap-5  ` }>
+    <div key={product.idMeal} className=  {`${style.maindiv} w-1/4 gap-5 ` }>
     <div className="product ">
-      <img src={product.strCategoryThumb}className={`${style.mainimg}`} alt="" />
+      <img src={product.strMealThumb}className={`${style.mainimg}`} alt="" />
       <h3 className=' mb-3'>{product.strCategory}</h3>
-      <Link   to= {`ProductDetalis/${product.idCategory}/${product.strCategory}`}>  
+      <h4 className=' mb-3'>   {product.strArea}</h4>
+     
+      <Link   to= {`ProductDetalis/${product.idMeal}/${product.strCategory}`}>  
       <button className={`${style.btn}`}>View Recipe</button> 
       </Link>
      

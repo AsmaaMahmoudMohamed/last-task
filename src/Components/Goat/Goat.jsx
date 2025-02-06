@@ -1,16 +1,16 @@
+
+import style from "./Goat.module.scss";
 import React, { useEffect, useState } from 'react';
-import style from "./Breakfast.module.scss";
+
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 
-
-
-export default function Breakfast() {
+export default function Goat() {
   const [products, setproducts] = useState([])
 
 function getProducts(){
-  axios.get(`https://www.themealdb.com/api/json/v1/1/filter.php?c=BreakFast`)
+  axios.get(`https://www.themealdb.com/api/json/v1/1/filter.php?c=Goat`)
   .then((res)=>{
     console.log(res.data.meals);
     setproducts(res.data.meals);

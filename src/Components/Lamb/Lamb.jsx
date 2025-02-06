@@ -1,16 +1,17 @@
+
+import style from "./Lamb.module.scss";
 import React, { useEffect, useState } from 'react';
-import style from "./Breakfast.module.scss";
+
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 
 
-
-export default function Breakfast() {
+export default function Lamb() {
   const [products, setproducts] = useState([])
 
 function getProducts(){
-  axios.get(`https://www.themealdb.com/api/json/v1/1/filter.php?c=BreakFast`)
+  axios.get(`https://www.themealdb.com/api/json/v1/1/filter.php?c=Lamb`)
   .then((res)=>{
     console.log(res.data.meals);
     setproducts(res.data.meals);

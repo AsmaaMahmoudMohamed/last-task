@@ -1,16 +1,15 @@
+
+import style from "./Miscellaneous.module.scss";
 import React, { useEffect, useState } from 'react';
-import style from "./Breakfast.module.scss";
+
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-
-
-
-export default function Breakfast() {
+export default function Miscellaneous() {
   const [products, setproducts] = useState([])
 
 function getProducts(){
-  axios.get(`https://www.themealdb.com/api/json/v1/1/filter.php?c=BreakFast`)
+  axios.get(`https://www.themealdb.com/api/json/v1/1/filter.php?c=Miscellaneous`)
   .then((res)=>{
     console.log(res.data.meals);
     setproducts(res.data.meals);
@@ -29,13 +28,13 @@ useEffect(()=>{
    
  <div className="row">
   {products.map((product)=>(
-    <div key={product.idMeal} className=  {`${style.maindiv} w-1/4 gap-5  ` }>
+    <div key={product?.idMeal} className=  {`${style.maindiv} w-1/4 gap-5  ` }>
     <div className="product ">
-      <img src={product.strMealThumb}className={`${style.mainimg}`} alt="" />
-      <h3 className=' mb-3'>{product.strCategory}</h3>
+      <img src={product?.strMealThumb}className={`${style.mainimg}`} alt="" />
+      <h3 className=' mb-3'>{product?.strCategory}</h3>
     
      
-      <Link   to= {`ProductDetalis/${product.idMeal}/${product.strMeal}`}>  
+      <Link   to= {`ProductDetalis/${product?.idMeal}/${product?.strMeal}`}>  
       <button className={`${style.btn}`}>View Recipe</button> 
       </Link>
 
@@ -52,4 +51,5 @@ useEffect(()=>{
    
   
 }
+
 

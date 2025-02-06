@@ -1,1 +1,50 @@
-.Breakfast {}
+.maindiv{
+    &:hover{
+        transform: scale(.9);
+        img{
+            transform: rotate(300deg); 
+           
+            
+        }
+    }
+    transition: all;
+    border-radius: 30px;
+    font-family: cursive;
+    font-size: 20px;
+    font-weight: 600;
+    background-color: white;
+    text-align: center;
+    gap:10px ;
+    margin-left: 100px;
+    margin-top: 50px ;
+    // img{
+    //     // transform: rotate(360deg);
+    //     border: 1px solid transparent;
+    //     border-radius: 50%;
+    //     width: 90%;
+    // }
+  
+    
+
+}
+.mainimg{
+        // transform: rotate(360deg);
+        border: 1px solid transparent;
+        border-radius: 50%;
+   
+    }
+  
+
+
+
+
+.btn{
+    background-color: #059669;
+    padding: 10px;
+    color: white ;
+    border-radius: 30px;
+    margin-bottom: 10px;
+   
+   
+
+}
