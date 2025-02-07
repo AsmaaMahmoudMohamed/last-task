@@ -6,25 +6,18 @@ import axios from 'axios';
 
 
 export default function ProductDetalis() {
-  const [product, setproduct] = useState(null);
+  const [product, setproduct] = useState();
 
 
   let {id} = useParams();
   // console.log(id);
 
-  function getProduct(id){
-    axios.get(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`)
+ async function getProduct(id){
+    let {data} = await axios.get(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`)
   
-    .then ((res)=>{
-       console.log(res.data);
-      setproduct(res.data)
-
+    setproduct(data)
+    console.log(data);
     
-    })
-    .catch((res)=>{
-      console.log(res);
-
-    });
   }
   useEffect(()=>{
     getProduct(id)
@@ -39,29 +32,33 @@ export default function ProductDetalis() {
   
   return ( <>   
   
- <div className="row">
-      <div className={`${style.maindiv}`}>   
-  <h1>{ product?.strMeal} Meaaal</h1>
-  <div className="w-1/4 gap-5">
-  <img src={product?.data?.strMealThumb} className='w-full' alt="" /> 
-  <button> {product?.data?.strYoutube} </button>
-  <button> {product?.data?.strSource}  </button>
+ <div className="row ">
+ <h1 className={`${style.h1}`}>{ product?.meals[0].strMeal} </h1>
+      <div className={`${style.maindvone} gap-4`}>   
+ 
+
+  <div className={` ${style.maindiv}    w-1/3 `}>
+  <img src={product?.meals[0].strMealThumb} className='w-full' alt="" /> 
+  <div className="flex ">  
+  <button className={`${style.button}`}> {product?.meals[0].strYoutube} </button>
+  <button className={`${style.button1}`}> {product?.meals[0].strSource}  </button>
   </div>
-  <div className="w-2/4">
-  <p>  {product?.strInstructions} mealll</p>
+  
   </div>
-  <div className="w-2/4">
-  <span>  {product?.strIngredient1} mealll</span>
-  <span>  {product?.strIngredient2} mealll</span>
-  <span>  {product?.strIngredient4} mealll</span>
-  <span>  {product?.strIngredient5} mealll</span>
-  <span>  {product?.strIngredient6} mealll</span>
-  <span>  {product?.strIngredient7} mealll</span>
-  <span>  {product?.strIngredient8} mealll</span>
-  <span>  {product?.strIngredient9} mealll</span>
-  <span>  {product?.strIngredient10} mealll</span>
-  <span>  {product?.strIngredient11} mealll</span>
-  <span>  {product?.strIngredient12} mealll</span>
+
+  <div className={`   ${style.maindiv}   w-1/3 p-2`}>
+  
+  <p>  {product?.meals[0].strInstructions} mealll</p>
+  </div>
+
+  <div className={`   ${style.maindiv } ${style.one}   w-1/3 `}>
+  <h2 className={`${style.h2}  font-bold`}>  Ingredients :</h2>
+  <h4 className={`${style.h4}  `}> Filo Pastry: {product?.meals[0].strIngredient1} mealll</h4>
+  <h4 className={`${style.h4}  `}> Minced Beef: {product?.meals[0].strIngredient2} mealll</h4>
+  <h4 className={`${style.h4}  `}> Onion: {product?.meals[0].strIngredient4} mealll</h4>
+  <h4 className={`${style.h4}  `}> Salt: {product?.meals[0].strIngredient5} mealll</h4>
+  <h4 className={`${style.h4}  `}> Pepper:  {product?.meals[0].strIngredient6} mealll</h4>
+  
   </div>
   
   </div>

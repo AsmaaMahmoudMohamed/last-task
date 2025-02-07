@@ -1,6 +1,49 @@
+
+.maindvone{
+    justify-content: center;
+    display: flex;
+   
+    color: black;
+    gap: 2px;
+    
+}
+
+.h1{
+    font-family: Pacifico, cursive;
+    font-size: 48px;
+    font-weight: 600;
+    margin-left: 100px;
+ 
+}
+
+.h2{
+    border-bottom: 3px solid black;
+    padding: 5px;
+    
+}
+.h4{
+    border-bottom: 1px solid gray;
+    padding: 10px;
+}
+
 .maindiv{
-    background-color: blueviolet;
-    color: white;
+    
     margin-top: 50px;
-    margin-left: 200px;
+    font-family: cursive;
+    font-weight: 400;
+    border-radius: 10px;
+  
+}
+.one{
+border-radius: 20px;
+background-color: white;
+}
+
+.button{
+   border-radius: 10px;
+   background-color: red;
+}
+.button1{
+    border-radius: 10px;
+    background-color:green;
 }
