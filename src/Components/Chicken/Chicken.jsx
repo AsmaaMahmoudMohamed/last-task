@@ -34,7 +34,7 @@ useEffect(()=>{
       <img src={product.strMealThumb}className={`${style.mainimg}`} alt="" />
       <h3 className=' mb-3'>{product.strMeal}</h3>
          
-       <Link   to= {`ProductDetalis/${product.idMeal}/${product.strMeal}`}>  
+       <Link   to= {`/ProductDetalis/${product.idMeal}/${product.strMeal}`}>  
       <button className={`${style.btn}`}>View Recipe</button> 
       </Link> 
 
